@@ -6,10 +6,10 @@
 - tag : docker tag fadizaboura/nginxapp:1.5 fadizaboura/nginxapp:latest
 - push : docker push fadizaboura/nginxapp:latest
 
-# k8s actions ( ran it locally on minikube):
+# k8s actions ( used minikube):
 - minkube start
-- kubectl apply -f .
-- kubectl port-forward service/nginx-service 5000:80 (ClusterIp svc)
+-     kubectl apply -f .
+-     kubectl port-forward service/nginx-service 5000:80
 - http://localhost:5000
 
 # test app health:
