@@ -29,11 +29,3 @@ do
     echo "$n"
     n=$(( n+1 ))
 done
-
-
-# read file content
-
-while read p
-do
-  echo $p
-done < hello.txt

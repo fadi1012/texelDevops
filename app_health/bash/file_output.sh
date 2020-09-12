@@ -18,3 +18,12 @@ then
  else
   echo "$file_name not exists"
 fi
+
+
+
+# read file content
+
+while read p
+do
+  echo $p
+done < hello.txt
