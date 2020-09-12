@@ -1,0 +1,316 @@
+* ls : -l ( long) with all the data, - a shows the hidden files   https://www.udemy.com/course/bash-shell-scripting-tutorial-for-beginners/learn/lecture/7251850#overview
+     : ls -lS - sorts the dir by the size
+	 : wild card -> ls -la Documents/*.html - shows all the files with .html
+	 : ls -laS > out.txt
+	 : ls -d */ -> lists all the dirs
+	 : ls -R -> lists the dir file structure
+********************************************************************************************************************************************
+* man : we get all the flags that can be used for ls
+********************************************************************************************************************************************
+
+* cd : done
+********************************************************************************************************************************************
+
+* cat : cat line1.txt line2.txt it cotnacts them
+      : cat -b (non blank lines)
+	  : cat -n it adds the line number
+	  : cat -s list.txt -> squeeze all blank lines into one
+	  : cat -E list.txt adds $ to each line ( to th ened of each line)
+********************************************************************************************************************************************
+
+
+* I/O: output > file
+     cat > test.txt
+	 * evertying will be entered in temrinal wll be inserted into test.txt
+
+	* cat >> test.txt **** two arrows mean appending
+********************************************************************************************************************************************
+
+
+* Mkdir: create dir
+     mkdir name/pic ( if name does not exist) -->>>> mkdir -b name/pic ( sub dir)
+	 mkdir -p name/{jhon,tom,fadi}
+********************************************************************************************************************************************
+
+
+* rm/rmdir :
+     * rmdir Downloads ** removes dir
+	 * if a dir contains a file rmdir will not work
+	 * rm - remove file and dir
+	 * rm -r - deletes all directory strcuture
+
+********************************************************************************************************************************************
+
+* cp source dest
+    * cp file1.txt file2.txt - if the file in dest does not exist it will create it
+	* cp file1.txt dir1 copy the file into the command
+	* cp file1.text file2.text dir1
+	* cp file1.txt .  ( copy it to the current dir)
+********************************************************************************************************************************************
+
+* mv source dest
+    * mv -i file3.txt dir -> it runs in intercative mode it asks if u want to override with the same name
+	* mv dir1 dir2
+********************************************************************************************************************************************
+
+* less - reads big files https://www.udemy.com/course/bash-shell-scripting-tutorial-for-beginners/learn/lecture/7251906#overview
+        https://unix.stackexchange.com/questions/193620/is-tail-f-more-efficient-than-less-f#:~:text=Under%20the%20hood%2C%20between%20less,data%20in%20a%20loop%20and
+********************************************************************************************************************************************
+
+* touch - create empty file + update the timestamp of a file
+********************************************************************************************************************************************
+
+* nano - is a text editor - i used vim
+********************************************************************************************************************************************
+
+* sudo - run as admin
+********************************************************************************************************************************************
+
+* top - displays linux process - in order to know which programds are taking much of cpu and memory
+     : click on s to update the refresh
+	 : click on i in order to filter
+	 : click on on k in order to provide the pid to kill
+********************************************************************************************************************************************
+
+* kill -
+    : pidof to get the pid of porcess
+	: kill -KILL - force the process to be closed
+	: kill -9 - kind of force
+********************************************************************************************************************************************
+
+* ps -ux get list of running proccess
+
+********************************************************************************************************************************************
+
+* file permissions:
+        chmod o+ ( others) and + is for adding the permssion   - change permssion for other
+		-rw-rw-rwx - the first symbol is the type of the file here it means it's a normal file
+		             the first rw is for the user
+					 the second rw is for the group
+					 the third rwx is for others
+	    chmod g+x changes the permssion fo the group
+		chmod g-x this for reducing the permssion
+
+		chmod ugo-rwx this removes all permesionn for user group and others
+********************************************************************************************************************************************
+* chown  https://linuxize.com/post/linux-chown-command/
+         https://askubuntu.com/questions/918379/what-is-the-main-difference-between-chmod-and-chown
+
+********************************************************************************************************************************************
+* directory permssion:
+         it starts with d -> drwxrwxrwx
+
+********************************************************************************************************************************************
+* octal permession
+r w x
+4+2+1 =7
+
+
+********************************************************************************************************************************************
+* which : gives the location
+
+* whatis : gives a short introduction than man
+
+
+********************************************************************************************************************************************
+* sudo useradd zabzob -m  -s /bin/bash -g users -c "my comment" ( -m creates a home dir for this user) -s for allowing the user to use the shell  -g the group
+* sudo passwd zabzob - in order to change the password of the user
+* userdel
+
+********************************************************************************************************************************************
+* groups -  print the groups a user is in
+* sudo groupadd zabzob
+* assing user to group - > sudo gpasswd -a fadi zabzob
+* sudo groupdel zabzob
+
+********************************************************************************************************************************************
+
+* bashrc file : exuected first
+   nano .bashrc
+   gedit .bashrc
+
+
+********************************************************************************************************************************************
+
+/etc - Usually contain the configuration files for all the programs that run on your Linux/Unix system
+
+********************************************************************************************************************************************
+
+* viewing resources : ( du df free commands)
+  * df: available disk space used by my system -> df -h ( disk free)
+  * du : estimate file space usage ( disjk usage per dir)
+  * du -sh - summary in human readble file space usgage
+  * free - Display amount of free and used memory in the system
+  : free -m for megabytes
+  : free -g for gegabytes
+
+ ********************************************************************************************************************************************
+* watch command:
+   execute a program periodically, showing output fullscreen
+
+ ********************************************************************************************************************************************
+* Head and Tail commands: by default it shows 10 lines
+ - head outputs the head of the file
+ - tail outputs the tail of the file
+ - head -n 3 auth.log
+
+********************************************************************************************************************************************
+
+* find command : search for files in a directory hierarchy
+ * find /var/log -name auth.log
+
+
+********************************************************************************************************************************************
+* wc command : print newline, word, and byte counts for each file
+   * wc auth.log 135960  1641983 15107454 auth.log  first is number of lines second is number of words third is  number of chars
+   * wc -l auth.log - it eventuyally gives the number of lines
+********************************************************************************************************************************************
+
+* cal - displays a calendar and the date of Easter
+* date - displalys the date
+********************************************************************************************************************************************
+
+* how to run multiple terminal commands at once:
+  ls ; pwd
+
+
+********************************************************************************************************************************************
+* apt-get to install commands and software and packages
+ * sudo apt-get install x
+ * sudo apt-get remove x
+
+********************************************************************************************************************************************
+* ifconfig connection etch0 wirless
+
+********************************************************************************************************************************************
+* tar command:
+  *  to compress and extract files
+  *  tar -cvf test.rar test - this for compressing
+  * tar -xvf test.rar this extrracts
+********************************************************************************************************************************************
+
+* grep command - print lines matching a pattern
+  * grep -i ( to search for small and capital )
+
+
+  * grep -n "option" *
+
+  * grep -v shows all ines without the string i am searching for
+********************************************************************************************************************************************
+
+* netstat command Print network connections, routing tables, interface statistics, masquerade connections, and multicast memberships
+
+  netstat -a shows all connetions
+  netstat -a | less
+  netstat -at | less - shows only tcp connections
+  netstat -au | less - shows only udp connetions
+  netstat -l - shows only listening programs
+  netstat -lt shows only tcp listenting programs
+  netstat -s shows the statutues
+  netstat -pt shows the pids of tcp connections
+  netstat -ie = ifconfig
+
+********************************************************************************************************************************************
+scp secure copy (remote file copy program) - transfer the file from local to remote
+
+********************************************************************************************************************************************
+SHELL SCRIPTING:
+
+cat /etc/shells - shows the suppoerted shells in my machine
+
+
+look at dummy.sh under buzz
+
+********************************************************************************************************************************************
+if [ -e $filename ] to check if file exists
+#if (( -s $filename)) # check if file is empty
+if [ -f $filename ] to check if it's a file
+if [ -d $filename ] to check if it's a directory
+#if (( -r $filename)) # check if file has read permission
+#if (( -w $filename)) # check if file has write permission
+#if (( -x $filename)) # check if file has execute permission
+
+
+********************************************************************************************************************************************
+signals and traps:
+1) echo "pid is $$" in order to get the pid of the script
+2) ctrl + c - terminate script SIGINT 2
+3) kill -9 pid  a seg kill signal
+4) man 7 signal
+5) trap "echo exit command is detected" 0 - this means that if a 0 exit code is detetceted all the code under this line will be exucuted
+
+file=/home/test/Desktop/file.txt
+trap "rm -f $file; exit" 0 2 15
+********************************************************************************************************************************************
+
+
+debug bash and set:
+
+bash -x hello.sh
+
+help set
+
+
+set -x -x  Print commands and their arguments as they are executed.
+
+set +x
+
+set -e  Exit immediately if a command exits with a non-zero status.
+
+
+
+********************************************************************************************************************************************
+* awk :
+
+2. Print the lines which matches with the given pattern.
+
+$ awk '/manager/ {print}' employee.txt
+. Splitting a Line Into Fields : For each record i.e line, the awk command splits the record delimited by whitespace character by default and stores it in the $n variables.
+If the line has 4 words, it will be stored in $1, $2, $3 and $4 respectively. Also, $0 represents the whole line.
+awk '{print $1,$4}' employee.txt
+
+
+********************************************************************************************************************************************
+* sed :Sed command is mostly used to replace the text in a file. The below simple sed command replaces the word “unix” with “linux” in the file.
+$sed 's/unix/linux/' geekfile.txt
+
+Replacing the nth occurrence of a pattern in a line : Use the /1, /2 etc flags to replace the first, second occurrence of a pattern in a line. The below command replaces the second occurrence of the word “unix” with “linux” in a line.
+$sed 's/unix/linux/2' geekfile.txt
+
+Replacing all the occurrence of the pattern in a line : The substitute flag /g (global replacement) specifies the sed command to replace all the occurrences of the string in the line.
+$sed 's/unix/linux/g' geekfile.txt
+
+Parenthesize first character of each word : This sed example prints the first character of every word in parenthesis.
+$ echo "Welcome To The Geek Stuff" | sed 's/\(\b[A-Z]\)/\(\1\)/g'
+Output:
+
+(W)elcome (T)o (T)he (G)eek (S)tuff
+
+********************************************************************************************************************************************
+* IP tables: linux firewalls
+
+iptables is a command-line firewall utility that uses policy chains to allow or block traffic.
+When a connection tries to establish itself on your system, iptables looks for a rule in its list to match it to.
+If it doesn’t find one, it resorts to the default action.
+
+This example shows how to block all connections from the IP address 10.10.10.10.
+
+iptables -A INPUT -s 10.10.10.10 -j DROP
+
+List the currently configured iptables rules:
+
+iptables -L
+
+To clear all the currently configured rules, you can issue the flush command.
+
+iptables -F
+
+********************************************************************************************************************************************
+lsof -Pi :8080 -sTCP:LISTEN
+
+The program lsof allows you to check which processes are using which ressources, like files or ports.
+
+********************************************************************************************************************************************
+nohup and &:
+When you execute a Unix job in the background ( using &, bg command), and logout from the session, your process will get killed. You can avoid this using several methods — executing the job with nohup,
+ or making it as batch job using at, batch or cron command.

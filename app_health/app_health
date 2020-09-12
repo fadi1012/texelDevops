@@ -1,1 +1,30 @@
 #!/bin/bash
+
+
+url="http://localhost:5000"
+
+
+date=$(date +'%Y-%m-%d')
+echo date is $date
+
+
+content=$(curl -L $url)
+echo $content
+
+
+count=0
+while [ $count -le 100 ]
+do
+    response=$(curl -s -o /dev/null -I -w "%{http_code}" $url)
+    echo "response is $response"
+
+    if [ $response != 200 ]
+    then
+       echo "app is not running"
+       break
+     else
+       echo "app is healthy"
+     fi
+      sleep 100
+      (( count++ ))
+done
