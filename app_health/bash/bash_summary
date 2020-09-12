@@ -181,6 +181,8 @@ r w x
 
 ********************************************************************************************************************************************
 * ifconfig connection etch0 wirless
+  ifconfig stands for "interface configuration."
+   It is used to view and change the configuration of the network interfaces on your system
 
 ********************************************************************************************************************************************
 * tar command:
@@ -191,7 +193,6 @@ r w x
 
 * grep command - print lines matching a pattern
   * grep -i ( to search for small and capital )
-
 
   * grep -n "option" *
 

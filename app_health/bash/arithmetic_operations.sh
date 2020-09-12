@@ -1,7 +1,6 @@
 #! /bin/bash
 
 # arithmetic operations
-]=
 num1=20
 num2=5
 
